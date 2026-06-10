@@ -2,7 +2,7 @@
 
 **Halil Aybar** — *APIs, customers, and the chaos in between.*
 
-🚀 **[Live Demo](https://refreshing-trust-production-943f.up.railway.app)** · [Resume](https://refreshing-trust-production-943f.up.railway.app/resume)
+🚀 **[Live Demo](https://integration-demo.vercel.app)** · [Resume](https://integration-demo.vercel.app/resume)
 
 Search for an artist, then head to the SE Simulator and try to debug a broken webhook. It's a real API and a real AI — not a mockup.
 
@@ -38,7 +38,7 @@ Uptime, latency, error rate, a Chart.js webhook timeline, and a live event log. 
 - **APIs:** Spotify Web API (Client Credentials flow), OpenAI GPT-4o-mini
 - **Visualizations:** Chart.js
 - **Auth:** OAuth 2.0 Client Credentials, server-side secret management
-- **Deployed:** Railway
+- **Deployed:** Vercel
 
 ---
 
@@ -87,7 +87,7 @@ se-playground/
 │   ├── app.js          # Frontend logic — API calls, chat loop, dashboard
 │   └── resume.html     # Resume page
 ├── .env.example        # Credential template
-├── railway.toml        # Railway deployment config
+├── vercel.json         # Vercel deployment config
 └── package.json
 ```
 
