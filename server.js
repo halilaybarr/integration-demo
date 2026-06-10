@@ -7,7 +7,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 app.get('/resume', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'resume.html'));
@@ -64,11 +68,9 @@ app.get('/api/spotify-token', async (req, res) => {
 
 const OpenAI = require('openai');
 
-let chatHistory = [];
-
 app.post('/api/chat', async (req, res) => {
   try {
-    const { message } = req.body;
+    const { message, history } = req.body;
 
     if (!process.env.OPENAI_API_KEY) {
       return res.status(500).json({ error: 'OpenAI API key not configured' });
@@ -85,18 +87,24 @@ reveal that the root cause is an expired OAuth token from the Spotify OAuth migr
 in November 2025. Give clues gradually, don't reveal everything at once.`
     };
 
-    chatHistory.push({ role: 'user', content: message });
+    const VALID_ROLES = new Set(['user', 'assistant']);
+    const MAX_HISTORY = 40;
+    const rawHistory = Array.isArray(history) ? history : [];
+    const messages = rawHistory
+      .filter(m => m && VALID_ROLES.has(m.role) && typeof m.content === 'string')
+      .slice(-MAX_HISTORY)
+      .map(m => ({ role: m.role, content: m.content }));
+    messages.push({ role: 'user', content: message });
 
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
-      messages: [systemPrompt, ...chatHistory],
+      messages: [systemPrompt, ...messages],
     });
 
     const reply = response.choices[0].message.content;
+    messages.push({ role: 'assistant', content: reply });
 
-    chatHistory.push({ role: 'assistant', content: reply });
-
-    res.json({ message: reply });
+    res.json({ message: reply, history: messages });
   } catch (error) {
     console.error('Error calling OpenAI:', error);
     res.status(500).json({ error: error.message });
