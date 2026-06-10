@@ -117,6 +117,8 @@ const chatMessages = document.getElementById('chat-messages');
 const chatInput = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
 
+let chatHistory = [];
+
 sendBtn.addEventListener('click', sendMessage);
 chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
@@ -138,7 +140,8 @@ async function sendMessage() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                message: message
+                message: message,
+                history: chatHistory
             })
         });
 
@@ -148,8 +151,8 @@ async function sendMessage() {
             throw new Error(data.error || 'Chat request failed');
         }
 
-        const assistantMessage = data.message;
-        addMessageToChat('assistant', assistantMessage);
+        chatHistory = data.history || chatHistory;
+        addMessageToChat('assistant', data.message);
 
     } catch (error) {
         console.error('Chat error:', error);
