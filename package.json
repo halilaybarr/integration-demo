@@ -16,10 +16,12 @@
   "author": "Halil Aybar",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "node-fetch": "^2.7.0",
     "openai": "^6.34.0"
   }
 }

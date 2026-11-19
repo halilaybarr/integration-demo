@@ -2,7 +2,7 @@
 
 **Halil Aybar** — *APIs, customers, and the chaos in between.*
 
-🚀 **[Live Demo](https://integration-demo-dun.vercel.app/)** · [Resume](https://integration-demo.vercel.app/resume)
+🚀 **[Live Demo](https://integration-demo-dun.vercel.app/)** · [Resume](https://integration-demo-dun.vercel.app/resume)
 
 Search for an artist, then head to the SE Simulator and try to debug a broken webhook. It's a real API and a real AI — not a mockup.
 

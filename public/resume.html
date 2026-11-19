@@ -162,6 +162,68 @@
             .resume-name { font-size: 36px; }
             .resume-entry-header { flex-direction: column; }
         }
+
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #111111;
+            }
+
+            .nav,
+            .download-btn {
+                display: none;
+            }
+
+            .resume-page {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .resume-header {
+                margin-bottom: 24px;
+                padding-bottom: 16px;
+                border-bottom-color: #cccccc;
+            }
+
+            .resume-name {
+                background: none;
+                -webkit-text-fill-color: #111111;
+                color: #111111;
+                font-size: 32px;
+            }
+
+            .resume-title,
+            .resume-entry-date,
+            .resume-entry-company,
+            .skill-group-label {
+                color: #444444;
+            }
+
+            .resume-section {
+                margin-bottom: 24px;
+            }
+
+            .resume-section-title,
+            .resume-contacts a,
+            .resume-entry ul li::before {
+                color: #111111;
+            }
+
+            .resume-entry {
+                break-inside: avoid;
+                margin-bottom: 16px;
+            }
+
+            .resume-entry ul li {
+                color: #222222;
+            }
+
+            .skill-tag {
+                background-color: #f5f5f5;
+                color: #111111;
+                border-color: #cccccc;
+            }
+        }
     </style>
 </head>
 <body>
@@ -185,9 +247,8 @@
             <div class="resume-title">Solutions Engineer · Full-Stack Developer</div>
             <div class="resume-contacts">
                 <a href="mailto:halilaybar0@gmail.com">halilaybar0@gmail.com</a>
-
-                <a href="https://linkedin.com/in/halilaybarr" target="_blank">LinkedIn</a>
-                <a href="https://github.com/halilaybarr" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/halilaybarr" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/halilaybarr" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="/">SE Playground</a>
                 <span style="color: var(--text-secondary); font-size: 13px;">Seattle, WA · Open to Relocation</span>
             </div>
@@ -238,7 +299,7 @@
                     <div class="resume-entry-title">SE Playground</div>
                     <div class="resume-entry-date"><a href="/" style="color: var(--spotify-green); text-decoration: none;">Live →</a></div>
                 </div>
-                <div class="resume-entry-company">Vanilla JS · Node.js · Express · Spotify API · OpenAI GPT-4o-mini · Chart.js · Railway</div>
+                <div class="resume-entry-company">Vanilla JS · Node.js · Express · Spotify API · OpenAI GPT-4o-mini · Chart.js · Vercel</div>
                 <ul>
                     <li>Built a portfolio site wired to real APIs — live Spotify search with JSON inspector, AI-powered customer debugging simulator, and a mock integration health dashboard</li>
                     <li>Express proxy server handles OAuth 2.0 Client Credentials flow so API keys never touch the frontend</li>
@@ -249,7 +310,7 @@
             <div class="resume-entry">
                 <div class="resume-entry-header">
                     <div class="resume-entry-title">News Explorer</div>
-                    <div class="resume-entry-date"><a href="https://github.com/halilaybarr/Final-Project" target="_blank" style="color: var(--spotify-green); text-decoration: none;">GitHub →</a></div>
+                    <div class="resume-entry-date"><a href="https://github.com/halilaybarr/Final-Project" target="_blank" rel="noopener noreferrer" style="color: var(--spotify-green); text-decoration: none;">GitHub →</a></div>
                 </div>
                 <div class="resume-entry-company">React · React Router · Vite · Node.js · Express · MongoDB · JWT · NewsAPI · Netlify</div>
                 <ul>
@@ -262,7 +323,7 @@
             <div class="resume-entry">
                 <div class="resume-entry-header">
                     <div class="resume-entry-title">WTWR (What to Wear?)</div>
-                    <div class="resume-entry-date"><a href="https://github.com/halilaybarr/se_project_express" target="_blank" style="color: var(--spotify-green); text-decoration: none;">GitHub →</a></div>
+                    <div class="resume-entry-date"><a href="https://github.com/halilaybarr/se_project_express" target="_blank" rel="noopener noreferrer" style="color: var(--spotify-green); text-decoration: none;">GitHub →</a></div>
                 </div>
                 <div class="resume-entry-company">React · Node.js · Express · MongoDB · Mongoose · REST API</div>
                 <ul>
@@ -358,7 +419,9 @@
         </div>
 
         <div class="download-btn">
+            <button type="button" class="btn btn-small" onclick="window.print()">Print / Save PDF</button>
             <span style="color: var(--text-secondary); font-size: 13px;">Want a PDF? Print this page — it's clean enough.</span>
         </div>
+    </div>
 </body>
 </html>
