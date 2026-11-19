@@ -39,7 +39,8 @@
 
         .resume-contacts {
             display: flex;
-            gap: 24px;
+            align-items: center;
+            gap: 12px 20px;
             flex-wrap: wrap;
         }
 
@@ -52,6 +53,17 @@
 
         .resume-contacts a:hover {
             text-decoration: underline;
+        }
+
+        .resume-contact-text {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .resume-summary {
+            font-size: 15px;
+            color: #d4d4d4;
+            line-height: 1.7;
         }
 
         .resume-section {
@@ -91,20 +103,31 @@
             white-space: nowrap;
         }
 
+        .resume-entry-date a {
+            color: var(--spotify-green);
+            text-decoration: none;
+        }
+
+        .resume-entry-date a:hover {
+            text-decoration: underline;
+        }
+
         .resume-entry-company {
             font-size: 14px;
             color: var(--text-secondary);
             margin-bottom: 10px;
         }
 
-        .resume-entry ul {
+        .resume-entry ul,
+        .resume-list {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 6px;
         }
 
-        .resume-entry ul li {
+        .resume-entry ul li,
+        .resume-list li {
             font-size: 14px;
             color: #d4d4d4;
             padding-left: 16px;
@@ -112,7 +135,8 @@
             line-height: 1.6;
         }
 
-        .resume-entry ul li::before {
+        .resume-entry ul li::before,
+        .resume-list li::before {
             content: '—';
             position: absolute;
             left: 0;
@@ -121,8 +145,8 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
         }
 
         .skill-group-label {
@@ -131,7 +155,7 @@
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .skill-tags {
@@ -193,6 +217,7 @@
             }
 
             .resume-title,
+            .resume-contact-text,
             .resume-entry-date,
             .resume-entry-company,
             .skill-group-label {
@@ -205,7 +230,9 @@
 
             .resume-section-title,
             .resume-contacts a,
-            .resume-entry ul li::before {
+            .resume-entry-date a,
+            .resume-entry ul li::before,
+            .resume-list li::before {
                 color: #111111;
             }
 
@@ -214,7 +241,9 @@
                 margin-bottom: 16px;
             }
 
-            .resume-entry ul li {
+            .resume-summary,
+            .resume-entry ul li,
+            .resume-list li {
                 color: #222222;
             }
 
@@ -246,11 +275,78 @@
             <div class="resume-name">Halil Aybar</div>
             <div class="resume-title">Solutions Engineer · Full-Stack Developer</div>
             <div class="resume-contacts">
+                <span class="resume-contact-text">Seattle, WA</span>
                 <a href="mailto:halilaybar0@gmail.com">halilaybar0@gmail.com</a>
+                <a href="tel:+12066610169">206-661-0169</a>
                 <a href="https://linkedin.com/in/halilaybarr" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/halilaybarr" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="/">SE Playground</a>
-                <span style="color: var(--text-secondary); font-size: 13px;">Seattle, WA · Open to Relocation</span>
+                <a href="/">integration-demo-dun.vercel.app</a>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Professional Summary</div>
+            <p class="resume-summary">
+                Engineer with a background in high-volume Operations Management (Starbucks) and Full-Stack Development. Builds integration tools and support workflows that survive production — experienced in troubleshooting APIs, managing enterprise rollouts, and translating complex technical requirements for non-technical stakeholders.
+            </p>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Skills</div>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-group-label">API &amp; Integration</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">JSON</span>
+                        <span class="skill-tag">Webhooks</span>
+                        <span class="skill-tag">Postman (Testing/Collections)</span>
+                        <span class="skill-tag">OAuth 2.0</span>
+                        <span class="skill-tag">SDK Integration</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Identity &amp; Security</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JWT (JSON Web Tokens)</span>
+                        <span class="skill-tag">bcrypt</span>
+                        <span class="skill-tag">Authentication Flows</span>
+                        <span class="skill-tag">RBAC</span>
+                        <span class="skill-tag">API Keys</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Core Stack</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Data &amp; Infrastructure</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">AWS (EC2, S3, IAM basics)</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Vercel</span>
+                        <span class="skill-tag">Netlify</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Support &amp; Ops</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Log Analysis</span>
+                        <span class="skill-tag">Root Cause Diagnosis</span>
+                        <span class="skill-tag">Technical Documentation</span>
+                        <span class="skill-tag">Onboarding Workflows</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -259,34 +355,38 @@
 
             <div class="resume-entry">
                 <div class="resume-entry-header">
-                    <div class="resume-entry-title">Freelance Solutions Consultant & Full-Stack Developer</div>
-                    <div class="resume-entry-date">Jan 2023 — Present</div>
+                    <div class="resume-entry-title">Full-Stack Developer &amp; Technical Solutions Consultant</div>
+                    <div class="resume-entry-date">Jan 2023 – Present</div>
                 </div>
-                <div class="resume-entry-company">Independent · Remote</div>
+                <div class="resume-entry-company">Freelance · Remote</div>
                 <ul>
-                    <li>Partnered with clients to design and implement full-stack solutions, acting as the technical liaison between business requirements and engineering execution</li>
-                    <li>Provided Tier 1/2 support for React and Node.js projects — triaging issues, diagnosing root causes, and resolving integration and deployment failures</li>
-                    <li>Integrated RESTful APIs and implemented OAuth 2.0 / JWT authentication flows across multiple client projects</li>
-                    <li>Built onboarding guides and technical documentation that reduced client support inquiries and improved product adoption</li>
-                    <li>Delivered solution walkthroughs to non-technical stakeholders — translating architecture decisions into plain language</li>
+                    <li>Provided technical support for small-business clients (including massage therapists and photographers), resolving UI, deployment, and configuration issues in React and Node.js projects.</li>
+                    <li>Ran discovery calls with freelance clients to scope true technical needs; diagnosed that one small-business client's content-editing need was better served by a no-code Google Sites build than custom development, delivering the solution directly and eliminating his ongoing dependency on a developer.</li>
+                    <li>Completed a post-graduation technical externship contributing backend development to a client website rebuild, including REST API integration and JWT/bcrypt-based authentication (project details restricted under NDA).</li>
+                    <li>Presented solution walkthroughs for end-users, translating technical choices into accessible language for diverse client backgrounds.</li>
+                    <li>Partnered with clients to design and implement full-stack software solutions, balancing business needs, user experience, and scalable architecture, acting as liaison between client goals and technical execution.</li>
+                    <li>Created onboarding guides and documentation to help clients understand and use custom applications, reducing support inquiries and improving client satisfaction.</li>
+                    <li>Documented client feedback, feature requests, and bug reports to facilitate continuous improvement for freelance-developed solutions.</li>
                 </ul>
             </div>
 
             <div class="resume-entry">
                 <div class="resume-entry-header">
-                    <div class="resume-entry-title">Customer Solutions & Operations Manager</div>
-                    <div class="resume-entry-date">May 2019 — Present</div>
+                    <div class="resume-entry-title">Customer Solutions and Operations Manager</div>
+                    <div class="resume-entry-date">May 2019 – Present</div>
                 </div>
-                <div class="resume-entry-company">Starbucks · Seattle, WA · Promoted through 4 roles</div>
+                <div class="resume-entry-company">Starbucks · Seattle, WA</div>
                 <ul>
-                    <li>Led a 15+ person team generating $38K+ in weekly revenue while maintaining top-quartile customer satisfaction district-wide</li>
-                    <li>Partnered with corporate IT to test, deploy, and train staff on new POS and operational systems — translating technical features into user-focused workflows</li>
-                    <li>Reduced onboarding time by 30% through structured training programs, peer mentorship systems, and custom documentation</li>
-                    <li>Improved customer connection scores by 20+ points through discovery-driven coaching and service journey mapping</li>
-                    <li>Recruited and mentored 25+ team members, reducing turnover 25% by aligning growth paths with business needs</li>
-                    <li>Served as communication bridge between frontline operations and corporate — surfacing technical issues, product feedback, and customer pain points</li>
-                    <li>Analyzed sales and inventory data (Unify / PowerBI) to forecast labor needs and drive operational decisions</li>
-                    <li>Awarded Partner of the Quarter (2020) for performance, technical acumen, and team leadership</li>
+                    <li>Progressively promoted through four roles (Barista, Assistant Manager, Customer Solutions and Operations Manager) based on performance, leadership, and strategic impact.</li>
+                    <li>Partnered with corporate IT to test, deploy, and train store teams on new POS and operational systems, translating technical features into clear, user-focused workflows.</li>
+                    <li>Acted as a communication bridge between frontline operations and corporate functions, surfacing technical issues, product feedback, and customer pain points.</li>
+                    <li>Led a 15+ person team generating $38K+ in weekly revenue while maintaining top-quartile customer satisfaction across the district.</li>
+                    <li>Reduced onboarding time by 30% through development of structured training programs, peer mentorship, and custom learning documentation.</li>
+                    <li>Improved customer connection scores by 20+ points through discovery-driven coaching, service journey mapping, and continuous feedback loops.</li>
+                    <li>Recruited, trained, and mentored 25+ team members across roles, reducing turnover 25% by aligning growth paths with business needs.</li>
+                    <li>Designed and implemented new operational processes that brought customer wait times to the 4-minute company target, down from highs of approximately 10 minutes.</li>
+                    <li>Analyzed daily sales data in MyDailyView and forecasted labor needs using Decision Center and Partner Hours, serving as the primary data consumer for district operations.</li>
+                    <li>Awarded Partner of the Quarter (2020) for outstanding performance, technical acumen, and team leadership.</li>
                 </ul>
             </div>
         </div>
@@ -296,98 +396,22 @@
 
             <div class="resume-entry">
                 <div class="resume-entry-header">
-                    <div class="resume-entry-title">SE Playground</div>
-                    <div class="resume-entry-date"><a href="/" style="color: var(--spotify-green); text-decoration: none;">Live →</a></div>
+                    <div class="resume-entry-title">Solutions Engineer Demo — integration-demo</div>
+                    <div class="resume-entry-date"><a href="https://integration-demo-dun.vercel.app" target="_blank" rel="noopener noreferrer">integration-demo-dun.vercel.app →</a></div>
                 </div>
-                <div class="resume-entry-company">Vanilla JS · Node.js · Express · Spotify API · OpenAI GPT-4o-mini · Chart.js · Vercel</div>
                 <ul>
-                    <li>Built a portfolio site wired to real APIs — live Spotify search with JSON inspector, AI-powered customer debugging simulator, and a mock integration health dashboard</li>
-                    <li>Express proxy server handles OAuth 2.0 Client Credentials flow so API keys never touch the frontend</li>
-                    <li>AI chat interface roleplays a broken webhook scenario — models real SE discovery and root cause diagnosis workflows</li>
+                    <li>Built a Node.js/Express application pairing an OpenAI-driven "difficult customer" chat simulator with Spotify API track lookups, designed to demonstrate the technical troubleshooting and customer de-escalation skillset core to solutions engineering.</li>
                 </ul>
             </div>
 
             <div class="resume-entry">
                 <div class="resume-entry-header">
-                    <div class="resume-entry-title">News Explorer</div>
-                    <div class="resume-entry-date"><a href="https://github.com/halilaybarr/Final-Project" target="_blank" rel="noopener noreferrer" style="color: var(--spotify-green); text-decoration: none;">GitHub →</a></div>
+                    <div class="resume-entry-title">News Explorer (Capstone) — news-explorer-api</div>
+                    <div class="resume-entry-date"><a href="https://github.com/halilaybarr/news-explorer-api" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
                 </div>
-                <div class="resume-entry-company">React · React Router · Vite · Node.js · Express · MongoDB · JWT · NewsAPI · Netlify</div>
                 <ul>
-                    <li>Full-stack news app — search and save articles via NewsAPI with user auth persisted across sessions</li>
-                    <li>Backend REST API handles signup/signin with JWT, protected article endpoints, and Joi/Celebrate validation; deployed separately from the frontend</li>
-                    <li>Frontend deployed to Netlify; API deployed to a live domain — end-to-end integration working in production</li>
+                    <li>Built a backend REST API for a full-stack news aggregator, implementing JWT-based authentication and MongoDB data persistence as a TripleTen graduation capstone project.</li>
                 </ul>
-            </div>
-
-            <div class="resume-entry">
-                <div class="resume-entry-header">
-                    <div class="resume-entry-title">WTWR (What to Wear?)</div>
-                    <div class="resume-entry-date"><a href="https://github.com/halilaybarr/se_project_express" target="_blank" rel="noopener noreferrer" style="color: var(--spotify-green); text-decoration: none;">GitHub →</a></div>
-                </div>
-                <div class="resume-entry-company">React · Node.js · Express · MongoDB · Mongoose · REST API</div>
-                <ul>
-                    <li>Weather-based clothing recommendation app — fetches live weather data and surfaces relevant wardrobe items</li>
-                    <li>Built a RESTful API with full CRUD for users and clothing items, like/unlike functionality, and custom error handling</li>
-                    <li>Frontend and API both deployed live; modular backend structure with separate controllers, routes, models, and middleware</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="resume-section">
-            <div class="resume-section-title">Skills</div>
-            <div class="skills-grid">
-                <div>
-                    <div class="skill-group-label">Languages</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">JavaScript (ES6+)</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">Frontend & Backend</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express.js</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">APIs & Integration</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Webhooks</span>
-                        <span class="skill-tag">OAuth 2.0</span>
-                        <span class="skill-tag">JWT</span>
-                        <span class="skill-tag">Postman</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">Data & Infra</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">AWS (EC2, S3, IAM)</span>
-                        <span class="skill-tag">Git</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">SE / Support</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Root Cause Diagnosis</span>
-                        <span class="skill-tag">Log Analysis</span>
-                        <span class="skill-tag">Technical Docs</span>
-                        <span class="skill-tag">Onboarding Design</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">Spoken Languages</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">English (fluent)</span>
-                        <span class="skill-tag">Turkish (native)</span>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -396,26 +420,37 @@
 
             <div class="resume-entry">
                 <div class="resume-entry-header">
-                    <div class="resume-entry-title">Software Engineering Certificate</div>
+                    <div class="resume-entry-title">TripleTen</div>
                     <div class="resume-entry-date">2024</div>
                 </div>
-                <div class="resume-entry-company">TripleTen · Full-stack: React, Node.js, Express, MongoDB, REST APIs, Auth</div>
+                <div class="resume-entry-company">Software Engineering Certificate</div>
+                <ul>
+                    <li>Relevant Coursework: Full-stack development: React, Node.js, Express, MongoDB, REST APIs, Git, authentication, API integration</li>
+                </ul>
             </div>
 
             <div class="resume-entry">
                 <div class="resume-entry-header">
-                    <div class="resume-entry-title">B.A. in English Language Teaching</div>
-                    <div class="resume-entry-date">2011 — 2016</div>
+                    <div class="resume-entry-title">Cukurova University</div>
+                    <div class="resume-entry-date">2016</div>
                 </div>
-                <div class="resume-entry-company">Çukurova University</div>
+                <div class="resume-entry-company">B.A. in English Language Teaching</div>
             </div>
+        </div>
 
-            <div class="resume-entry">
-                <div class="resume-entry-header">
-                    <div class="resume-entry-title">AWS Solutions Architect Associate</div>
-                    <div class="resume-entry-date">In Progress · 2026</div>
-                </div>
-            </div>
+        <div class="resume-section">
+            <div class="resume-section-title">Certifications</div>
+            <ul class="resume-list">
+                <li>AWS Solutions Architect Associate — In Progress (expected 2026)</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Languages</div>
+            <ul class="resume-list">
+                <li>English (fluent)</li>
+                <li>Turkish (native)</li>
+            </ul>
         </div>
 
         <div class="download-btn">
